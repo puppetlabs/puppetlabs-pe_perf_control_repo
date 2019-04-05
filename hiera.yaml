@@ -5,7 +5,7 @@ hierarchy:
     data_hash: classifier_data
   - name: Yaml backend
     data_hash: yaml_data
-    datadir: "/etc/puppetlabs/code/environments/production/hieradata/"
+    datadir: "hieradata"
     paths:
       - "vagrant/%{is_vagrant}.yaml"
       - "nodes/%{fake_domain}/%{fqdn}.yaml"
