@@ -22,13 +22,7 @@ mod 'puppetlabs/apt', '6.3.0'
 #mod 'rampup_profile_gitlab',
 #  :git    => 'https://github.com/Puppet-RampUpProgram/rampup_profile_gitlab',
 #  :commit => '4a5599882c0e2d716be53b0f543be2af90ec6a94'
-
-# golja-influxdb verion 4.0.0 on the Forge does not support puppet 5.
-# This git ref should be updated when a 5.0.0 release is published to the Forge.
-mod 'influxdb',
-  :git => 'https://github.com/dgolja/golja-influxdb',
-  :ref => '5c5f74dfbda434562d31369b7f8c447895b06a1c'
-
+mod 'golja/influxdb', '4.0.0'  # does not support puppet > 5.0
 mod 'puppet/gitlab', '3.0.2'
 mod 'puppetlabs/apache', '4.1.0'
 
