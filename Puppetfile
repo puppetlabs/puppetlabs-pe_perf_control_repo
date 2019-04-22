@@ -92,3 +92,7 @@ mod 'puppetlabs/aws', '2.1.0'
 
 ## i18n, just putting this here created a perf issue in the past
 mod 'eputnam/i18ndemo', '0.3.0'
+
+## Use multiple non-root agents to tests load
+mod 'clamps',
+  :git => 'https://github.com/puppetlabs/clamps'
