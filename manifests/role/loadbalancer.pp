@@ -1,3 +1,18 @@
+# @summary
+#   Role for loadbalancer only containing the loadbalancer profile.
+#
+# @param balance_type
+#   Method to use for load balancing
+#
+# @param stats_username
+#   Username for authenticating to the stats web interface
+#
+# @param stats_password
+#   Password for authenticating to the stats web interface
+#
+# @param stats_port
+#   Port to publish the stats web interface on
+#
 class role::loadbalancer(
   $balance_type   = 'leastconn',
   $stats_username = 'puppet',
