@@ -4,11 +4,11 @@ source ENV["GEM_SOURCE"] || "https://artifactory.delivery.puppetlabs.net/artifac
 
 group :test do
   gem "git"
-  gem "r10k"
+  gem "logger"
+  gem "metadata-json-lint"
   gem "puppet"
   gem "puppet-lint"
-  gem "metadata-json-lint"
+  gem "r10k"
   gem "rake"
   gem "rubocop"
-  gem "logger"
 end
