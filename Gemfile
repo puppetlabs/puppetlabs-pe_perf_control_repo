@@ -5,7 +5,6 @@ source ENV["GEM_SOURCE"] || "https://artifactory.delivery.puppetlabs.net/artifac
 group :test do
   gem "git"
   gem "logger"
-  gem "metadata-json-lint"
   gem "puppet"
   gem "puppet-lint"
   gem "r10k"
