@@ -9,5 +9,6 @@ group :test do
   gem "puppet-lint"
   gem "r10k"
   gem "rake"
+  gem "rspec"
   gem "rubocop"
 end
