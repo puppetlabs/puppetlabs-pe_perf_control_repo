@@ -6,7 +6,19 @@ require "r10k/action/puppetfile/install"
 require "rspec/core/rake_task"
 
 RuboCop::RakeTask.new
-PuppetLint.configuration.send('disable_autoloader_layout')
+PuppetLint::RakeTask.new :lint do |config|
+  config.ignore_paths = ["vendor/**/*", "modules/**/*"]
+  # Disabled checks should be removed after the puppet code has been updated.
+  config.disable_checks = %w[autoloader_layout
+                             documentation
+                             140chars
+                             double_quoted_strings
+                             arrow_alignment
+                             only_variable_string
+                             trailing_whitespace
+                             arrow_on_right_operand_line
+                             case_without_default]
+end
 
 namespace :test do
   desc "Install modules"
