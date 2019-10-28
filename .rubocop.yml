@@ -5,8 +5,10 @@ AllCops:
     - 'vendor/**/*'
 Layout/AlignHash:
   EnforcedHashRocketStyle: table
+# Set this to 'EnforcedStyle: double_quotes' as part of SLV-678
 Style/StringLiterals:
   Enabled: false
+# Delete this as part of SLV-678
 Style/FrozenStringLiteralComment:
   Enabled: false
 Metrics/LineLength:
