@@ -3,7 +3,7 @@
 #   loadbalancer_exports profile.
 #
 # @param haproxy_options
-#   Options to use fro the haproxy balancermember
+#   Options to use for the haproxy balancermember
 #
 # @param puppet_port
 #   Port for haproxy to listen on for the puppet service
