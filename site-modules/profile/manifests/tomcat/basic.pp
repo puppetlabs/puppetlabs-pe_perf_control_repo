@@ -1,3 +1,4 @@
+#
 class profile::tomcat::basic {
   include ::java
   ::tomcat::install { '/opt/tomcat':

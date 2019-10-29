@@ -1,3 +1,4 @@
+#
 define sudo::entry ($entry) {
   include ::sudo
   include ::sudo::params

@@ -1,3 +1,4 @@
+#
 # Class: motd
 #
 # Borrowed from https://github.com/ripienaar/puppet-concat

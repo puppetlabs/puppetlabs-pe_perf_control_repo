@@ -1,3 +1,4 @@
+#
 # Define: motd::register
 #
 # Add a message to the MOTD

@@ -1,3 +1,4 @@
+#
 class profile::sysop::packages::python_pip(
     $package_name = $profile::sysop::packages::python_pip::params::package_name
 ) inherits profile::sysop::packages::python_pip::params {

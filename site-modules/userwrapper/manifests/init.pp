@@ -1,3 +1,4 @@
+#
 class userwrapper {
   include ::sudo
 

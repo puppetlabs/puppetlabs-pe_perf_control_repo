@@ -1,8 +1,9 @@
+#
 class profile::influxdb::basic {
 
   $graphite_config = {
     'default' => {
-      'enabled'           => true, # not default
+      'enabled'       => true, # not default
     }
   }
 
@@ -26,9 +27,9 @@ class profile::influxdb::basic {
 }
 
   class { 'influxdb':
-    manage_repos     => true,
-    graphite_config  => $graphite_config,
-    udp_config       => $udp_config,
+    manage_repos    => true,
+    graphite_config => $graphite_config,
+    udp_config      => $udp_config,
   }
 
 }

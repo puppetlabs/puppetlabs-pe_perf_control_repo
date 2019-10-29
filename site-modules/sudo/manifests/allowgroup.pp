@@ -1,3 +1,4 @@
+#
 # Define: sudo::allowgroup
 #
 # Allow a posix group to sudo root
