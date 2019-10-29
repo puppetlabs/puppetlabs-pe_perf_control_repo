@@ -1,6 +1,8 @@
-require 'spec_helper'
-require 'puppet/face'
-require 'puppet/module_tool'
+# frozen_string_literal: true
+
+require "spec_helper"
+require "puppet/face"
+require "puppet/module_tool"
 
 describe "puppet module list" do
   it "should not contain any invalid modules" do
