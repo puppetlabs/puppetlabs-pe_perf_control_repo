@@ -9,7 +9,7 @@ mod 'puppetlabs/yumrepo_core', '1.0.0'
 
 # Modules required to get a tomcat server up and running
 mod 'puppetlabs/tomcat', '2.5.0'
-mod 'puppetlabs/stdlib', '5.2.0'
+mod 'puppetlabs/stdlib', '4.25.1' # openldap and i18ndemo modules require < 5
 mod 'puppet/archive', '3.2.1'
 mod 'puppetlabs/concat', '5.3.0'
 mod 'puppetlabs/java', '3.3.0'
@@ -18,19 +18,17 @@ mod 'puppetlabs/java', '3.3.0'
 mod 'puppetlabs/postgresql', '5.12.1'
 mod 'puppetlabs/apt', '6.3.0'
 
-# Seeing issues with latest version of gatling
-#mod 'rampup_profile_gitlab',
-#  :git    => 'https://github.com/Puppet-RampUpProgram/rampup_profile_gitlab',
-#  :commit => '4a5599882c0e2d716be53b0f543be2af90ec6a94'
-
 # golja-influxdb verion 4.0.0 on the Forge does not support puppet 5.
 # This git ref should be updated when a 5.0.0 release is published to the Forge.
 mod 'influxdb',
-  :git => 'https://github.com/dgolja/golja-influxdb',
-  :ref => '5c5f74dfbda434562d31369b7f8c447895b06a1c'
+    git: 'https://github.com/dgolja/golja-influxdb',
+    ref: '5c5f74dfbda434562d31369b7f8c447895b06a1c'
 
 mod 'puppet/gitlab', '3.0.2'
 mod 'puppetlabs/apache', '4.1.0'
+
+# Modules used for loadbalancer role/profile
+mod 'puppetlabs/haproxy', '3.0.1'
 
 ##################################################################################
 ## MODULES BELOW THIS LINE ARE NOT USED BY ANY ROLES/PROFILES
@@ -49,7 +47,7 @@ mod 'puppetlabs/vcsrepo', '2.4.0'
 
 ## Basic linux host management
 mod 'puppetlabs/accounts', '3.2.0'
-mod 'jlambert121/yum', '0.2.1'  # should puppet/yum be used instead?
+mod 'puppet/yum', '4.0.0'
 mod 'puppetlabs/ntp', '7.4.0'
 mod 'puppetlabs/firewall', '1.15.3'
 # mod 'saz/rsyslog', '3.5.1'  # the saz module does not support puppet > 5.0
@@ -60,24 +58,27 @@ mod 'puppetlabs/docker', '3.5.0'
 
 ## Common tools in an infrastructure
 mod 'camptocamp/openldap', '1.17.0'
-mod 'puppet/redis', '4.0.0'  # supports puppet>=5.5.8
+mod 'puppet/redis', '4.0.0' # supports puppet>=5.5.8
+mod 'herculesteam/augeasproviders_sysctl', '2.3.1'
+mod 'herculesteam/augeasproviders_shellvar', '2.2.4'
+mod 'herculesteam/augeasproviders_core', '2.5.0'
 mod 'saz/memcached', '3.4.0'
-mod 'puppetlabs/haproxy', '3.0.1'
-mod 'puppet/nginx', '0.16.0'  # supports puppet>=5.5.8
-mod 'rtyler/jenkins', '1.7.0'
+mod 'puppet/nginx', '0.15.0' # supports puppet>=4.10.0
 mod 'sensu/sensu', '3.0.0'
-mod 'puppet/grafana', '6.0.0'  # supports puppet>=5.5.8
+mod 'puppet/grafana', '6.0.0' # supports puppet>=5.5.8
 
 mod 'elastic/elasticsearch', '6.3.3'
 mod 'elastic/logstash', '6.1.5'
-# mod 'elasticsearch/logstashforwarder', '0.1.1'  # does not support puppet > 4.0
+mod 'elastic/elastic_stack', '6.3.2'
+mod 'richardc/datacat', '0.6.2'
 
 mod 'puppetlabs/java_ks', '2.4.0'
 
 ## Basic Windows host management
+mod 'puppet/download_file', '3.2.0'
 mod 'puppetlabs/acl', '2.1.0'
 mod 'puppetlabs/reboot', '2.1.2'
-mod 'puppetlabs/chocolatey', '3.3.0'  # the chocolatey/ version does not support puppet > 5
+mod 'puppetlabs/chocolatey', '5.0.0' # the chocolatey/ version does not support puppet > 5
 mod 'puppetlabs/powershell', '2.2.0'
 mod 'puppetlabs/registry', '2.1.0'
 mod 'puppetlabs/wsus_client', '1.1.0'
@@ -85,11 +86,11 @@ mod 'puppet/windows_env', '3.2.0'
 mod 'puppet/windows_firewall', '2.0.2'
 mod 'puppet/windows_autoupdate', '2.0.1'
 mod 'puppet/dotnet', '2.0.2'
+mod 'liamjbennett/win_facts', '0.0.2'
 mod 'puppet/windowsfeature', '3.2.2'
 mod 'puppet/windows_eventlog', '2.0.2'
 
 ## Advanced Windows host management
-mod 'chocolatey/chocolatey_server', '0.0.5'
 mod 'puppetlabs/iis', '4.5.1'
 mod 'puppet/graphite_powershell', '3.0.2'
 
@@ -98,7 +99,9 @@ mod 'puppetlabs/aws', '2.1.0'
 
 ## i18n, just putting this here created a perf issue in the past
 mod 'eputnam/i18ndemo', '0.3.0'
+mod 'puppetlabs/translate', '1.2.0'
 
 ## Use multiple non-root agents to tests load
 mod 'clamps',
-  :git => 'https://github.com/puppetlabs/clamps'
+    git: 'https://github.com/puppetlabs/clamps',
+    ref: '8602b95c595b92290eb938bb71ad05092805af1e'

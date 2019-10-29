@@ -1,3 +1,16 @@
+# @summary
+#   Profile for loadbalancer_exports to create puppet and pcp
+#   haproxy balancemembers.
+#
+# @param haproxy_options
+#   Options to use for the haproxy balancermember
+#
+# @param puppet_port
+#   Port for haproxy to listen on for the puppet service
+#
+# @param pcp_port
+#   Port for haproxy to listen on for the pcp service
+#
 class profile::loadbalancer_exports(
   $haproxy_options = 'check',
   $puppet_port     = '8140',

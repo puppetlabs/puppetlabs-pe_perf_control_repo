@@ -1,3 +1,18 @@
+# @summary
+#   Profile for configuring haproxy
+#
+# @param balance_type
+#   Method to use for load balancing
+#
+# @param stats_username
+#   Username for authenticating to the stats web interface
+#
+# @param stats_password
+#   Password for authenticating to the stats web interface
+#
+# @param stats_port
+#   Port to publish the stats web interface on
+#
 class profile::loadbalancer(
   $balance_type   = 'roundrobin',
   $stats_username = 'puppet',
@@ -6,7 +21,7 @@ class profile::loadbalancer(
 ){
   class { 'haproxy':
     global_options => {
-      'log'     => "$::ipaddress local0",
+      'log'     => "${::ipaddress} local0",
       'chroot'  => '/var/lib/haproxy',
       'pidfile' => '/var/run/haproxy.pid',
       'maxconn' => '4000',
@@ -15,34 +30,34 @@ class profile::loadbalancer(
     },
   }
 
-  haproxy::listen { "stats":
+  haproxy::listen { 'stats':
     ipaddress        => '*',
     ports            => $stats_port,
     collect_exported => false,
     options          => {
       'mode'  => 'http',
-      'stats' => ['uri /', "auth $stats_username:$stats_password"]
+      'stats' => ['uri /', "auth ${stats_username}:${stats_password}"]
     },
   }
 
-  haproxy::listen { "compile":
+  haproxy::listen { 'compile':
     ipaddress        => '*',
     ports            => '8140',
     collect_exported => true,
     options          => {
-      'balance'      => $balance_type,
-      'maxconn'      => '4000',
+      'balance' => $balance_type,
+      'maxconn' => '4000',
     },
   }
 
-  haproxy::listen { "pcp":
+  haproxy::listen { 'pcp':
     ipaddress        => '*',
     ports            => '8142',
     collect_exported => true,
     options          => {
-      'balance'      => $balance_type,
-      'maxconn'      => '4000',
-      'timeout'      => 'tunnel 15m',
+      'balance' => $balance_type,
+      'maxconn' => '4000',
+      'timeout' => 'tunnel 15m',
     },
   }
 }

@@ -1,0 +1,29 @@
+AllCops:
+  TargetRubyVersion: 2.3
+  Exclude:
+    - 'modules/**/*'
+    - 'vendor/**/*'
+Layout/AlignHash:
+  EnforcedHashRocketStyle: table
+# Set this to 'EnforcedStyle: double_quotes' as part of SLV-678
+Style/StringLiterals:
+  Enabled: false
+# Delete this as part of SLV-678
+Style/FrozenStringLiteralComment:
+  Enabled: false
+Metrics/LineLength:
+  Max: 120
+Metrics/MethodLength:
+  Max: 99
+Metrics/BlockLength:
+  Max: 50
+Metrics/ModuleLength:
+  Max: 999
+Metrics/AbcSize:
+  Max: 59
+Metrics/CyclomaticComplexity:
+  Max: 15
+Metrics/PerceivedComplexity:
+  Max: 15
+Naming/FileName:
+  Enabled: false

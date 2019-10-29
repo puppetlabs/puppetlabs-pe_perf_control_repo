@@ -1,0 +1,20 @@
+---
+language: ruby
+cache: bundler
+sudo: false
+bundler_args: --jobs 4 --retry 2 --without packaging documentation
+before_install:
+  - rm -f Gemfile.lock
+  - gem update --system && gem install bundler --no-document
+script:
+  - "bundle exec rake $CHECK"
+notifications:
+  email: false
+rvm:
+  - 2.5.1
+
+matrix:
+  include:
+    - env: "CHECK=rubocop"
+    - env: "CHECK=lint"
+    - env: "CHECK=test:spec"
