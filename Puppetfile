@@ -9,7 +9,7 @@ mod 'puppetlabs/yumrepo_core', '1.0.0'
 
 # Modules required to get a tomcat server up and running
 mod 'puppetlabs/tomcat', '2.5.0'
-mod 'puppetlabs/stdlib', '4.25.1'
+mod 'puppetlabs/stdlib', '4.25.1' # openldap and i18ndemo modules require < 5
 mod 'puppet/archive', '3.2.1'
 mod 'puppetlabs/concat', '5.3.0'
 mod 'puppetlabs/java', '3.3.0'
