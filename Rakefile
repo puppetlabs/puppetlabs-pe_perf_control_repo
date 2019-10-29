@@ -31,4 +31,6 @@ namespace :test do
     RSpec::Core::RakeTask.new(:spec)
     Rake::Task["spec"].execute
   end
+  desc "Run all tests"
+  task all: [:rubocop, :lint, "test:spec"]
 end
