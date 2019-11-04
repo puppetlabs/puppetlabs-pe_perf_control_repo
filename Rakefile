@@ -8,16 +8,8 @@ require "rspec/core/rake_task"
 RuboCop::RakeTask.new
 PuppetLint::RakeTask.new :lint do |config|
   config.ignore_paths = ["vendor/**/*", "modules/**/*"]
-  # Disabled checks should be removed after the puppet code has been updated.
-  config.disable_checks = %w[autoloader_layout
-                             documentation
-                             140chars
-                             double_quoted_strings
-                             arrow_alignment
-                             only_variable_string
-                             trailing_whitespace
-                             arrow_on_right_operand_line
-                             case_without_default]
+  # User ssh keys exceed 140 characters and should not be split to accomodate a check.
+  config.disable_checks = %w[140chars]
 end
 
 namespace :test do

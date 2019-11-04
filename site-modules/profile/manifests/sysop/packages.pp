@@ -1,3 +1,4 @@
+#
 # This is based on profile::sysop in puppetlabs-modules, to help us get our
 #  catalog's package count up closer to what it would be in an ops catalog.
 class profile::sysop::packages {

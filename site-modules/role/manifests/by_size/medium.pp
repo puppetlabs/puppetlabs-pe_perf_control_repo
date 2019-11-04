@@ -1,3 +1,4 @@
+#
 class role::by_size::medium {
   include ::role::by_size::small
 

@@ -1,3 +1,4 @@
+#
 # Class: sudo::params
 #
 # Set the parameters for sudo on different operating systems
@@ -30,6 +31,9 @@ class sudo::params {
           $sudoers_file = '/etc/sudoers'
           $sudoers_tmp  = '/etc/sudoers.tmp'
           $sudo_pkg     = 'security/sudo'
+        }
+        default: {
+          fail("SunOS/Soleris kernel ${::kernelrelease} is not supported")
         }
       }
     }

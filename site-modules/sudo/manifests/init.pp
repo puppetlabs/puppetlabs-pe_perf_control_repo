@@ -1,3 +1,4 @@
+#
 # Class: sudo
 #
 # Install and manage sudo

@@ -1,3 +1,4 @@
+#
 class profile::postgresql::basic {
   class { 'postgresql::server':
     ip_mask_deny_postgres_user => '0.0.0.0/32',
@@ -22,7 +23,7 @@ class profile::postgresql::basic {
   }
 
   postgresql::server::pg_hba_rule { 'allow application network to access app database':
-    description => "Open up PostgreSQL for access from 200.1.2.0/24",
+    description => 'Open up PostgreSQL for access from 200.1.2.0/24',
     type        => 'host',
     database    => 'app',
     user        => 'app',

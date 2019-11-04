@@ -1,3 +1,4 @@
+#
 class profile::apache::basic {
   #copied from https://github.com/puppetlabs/puppetlabs-apache/blob/master/examples/vhost.pp
 
