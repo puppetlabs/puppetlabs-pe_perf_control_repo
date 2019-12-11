@@ -37,7 +37,7 @@ mod "puppetlabs/haproxy", "3.0.1"
 ##################################################################################
 
 # Enable collection of Puppet api-endpoint metrics
-mod "puppetlabs/puppet_metrics_collector", "5.1.2"
+mod "puppetlabs/puppet_metrics_collector", "5.3.0"
 
 # Extra modules just to increase the total amount of code in the puppet environment
 ## "Additional modules to complement PE installation"

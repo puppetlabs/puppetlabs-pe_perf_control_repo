@@ -3,7 +3,7 @@ AllCops:
   Exclude:
     - 'modules/**/*'
     - 'vendor/**/*'
-Layout/AlignHash:
+Layout/HashAlignment:
   EnforcedHashRocketStyle: table
 Style/StringLiterals:
   EnforcedStyle: double_quotes
