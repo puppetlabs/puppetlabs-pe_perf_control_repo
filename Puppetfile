@@ -38,7 +38,7 @@ mod "puppetlabs/haproxy", "3.0.1"
 
 # Enable collection of Puppet api-endpoint metrics
 mod "puppetlabs/puppet_metrics_collector",
-    git: "https://github.com/puppetlabs/puppetlabs-pe_perf_control_repo",
+    git: "https://github.com/puppetlabs/puppetlabs-puppet_metrics_collector",
     branch: "master"
 
 # Extra modules just to increase the total amount of code in the puppet environment
