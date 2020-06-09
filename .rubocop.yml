@@ -1,9 +1,9 @@
 AllCops:
-  TargetRubyVersion: 2.3
+  TargetRubyVersion: 2.5
   Exclude:
     - 'modules/**/*'
     - 'vendor/**/*'
-Layout/AlignHash:
+Layout/HashAlignment:
   EnforcedHashRocketStyle: table
 Style/StringLiterals:
   EnforcedStyle: double_quotes
